@@ -1,31 +1,15 @@
-
-mutation RegisterMe {
-  register(input: {
-    name:"mohamed korany",
-    email: "mohammed.korany.ali@gmail.com",
-    password: "12345678910@MMD",
-    mobile:"01110686618"
-  })
+mutation register($registerInput:RegisterInput!){
+   register(input:$registerInput )
 }
 
 
-mutation loginMe{
-  login(input:{
-   email:"mohammed.korany.ali@gmail.com"
-   password:"12345678910@MMD"
-  }),
-  {
+
+mutation login($loginInput:LoginInput!)
+{
+  login(input:$loginInput){
     access_token
-    token_type
     expires_in
     refresh_token
-  }
-}
-
-query getAllMyProfile{
-  myProfile{
-    birth_date
-    mobile
-    gender
+    access_token
   }
 }
