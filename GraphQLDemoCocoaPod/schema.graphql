@@ -1,0 +1,31 @@
+
+mutation RegisterMe {
+  register(input: {
+    name:"mohamed korany",
+    email: "mohammed.korany.ali@gmail.com",
+    password: "12345678910@MMD",
+    mobile:"01110686618"
+  })
+}
+
+
+mutation loginMe{
+  login(input:{
+   email:"mohammed.korany.ali@gmail.com"
+   password:"12345678910@MMD"
+  }),
+  {
+    access_token
+    token_type
+    expires_in
+    refresh_token
+  }
+}
+
+query getAllMyProfile{
+  myProfile{
+    birth_date
+    mobile
+    gender
+  }
+}
